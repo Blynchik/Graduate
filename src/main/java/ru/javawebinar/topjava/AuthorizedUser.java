@@ -2,7 +2,7 @@ package ru.javawebinar.topjava;
 
 import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.to.UserTo;
-import ru.javawebinar.topjava.util.UserUtil;
+import ru.javawebinar.topjava.util.UsersUtil;
 
 import java.io.Serial;
 
@@ -14,7 +14,7 @@ public class AuthorizedUser extends org.springframework.security.core.userdetail
 
     public AuthorizedUser(User user) {
         super(user.getEmail(), user.getPassword(), user.isEnabled(), true, true, true, user.getRoles());
-        this.userTo = UserUtil.asTo(user);
+        this.userTo = UsersUtil.asTo(user);
     }
 
     public int getId() {

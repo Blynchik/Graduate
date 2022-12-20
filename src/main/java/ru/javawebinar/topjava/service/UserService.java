@@ -13,7 +13,7 @@ import ru.javawebinar.topjava.AuthorizedUser;
 import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.repository.UserRepository;
 import ru.javawebinar.topjava.to.UserTo;
-import ru.javawebinar.topjava.util.UserUtil;
+import ru.javawebinar.topjava.util.UsersUtil;
 
 import java.util.List;
 
@@ -66,7 +66,7 @@ public class UserService implements UserDetailsService {
     @Transactional
     public void update(UserTo userTo) {
         User user = get(userTo.id());
-        User updatedUser = UserUtil.updateFromTo(user, userTo);
+        User updatedUser = UsersUtil.updateFromTo(user, userTo);
         repository.save(updatedUser);   // !! need only for JDBC implementation
     }
 

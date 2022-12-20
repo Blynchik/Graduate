@@ -1,7 +1,7 @@
 package ru.javawebinar.topjava.to;
 
 import org.hibernate.validator.constraints.Range;
-import ru.javawebinar.topjava.util.UserUtil;
+import ru.javawebinar.topjava.util.UsersUtil;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -29,7 +29,7 @@ public class UserTo extends BaseTo implements Serializable {
 
     @Range(min = 10, max = 10000)
     @NotNull
-    private Integer caloriesPerDay = UserUtil.DEFAULT_CALORIES_PER_DAY;
+    private Integer caloriesPerDay = UsersUtil.DEFAULT_CALORIES_PER_DAY;
 
     public UserTo() {
     }
